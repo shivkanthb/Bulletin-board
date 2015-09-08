@@ -34,7 +34,15 @@ new Vue({
   		}
   		];
   		this.$set('events',events);
-  	}
+  	},
+
+    deleteEvent: function(index) {
+    if(confirm("Are you sure you want to delete this event?")) {
+    // $remove is a Vue convenience method similar to splice
+    this.events.$remove(index);        
+      }
+    }
+
   }
 
 });
